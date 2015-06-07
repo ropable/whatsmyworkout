@@ -1,0 +1,8 @@
+media/
+staticfiles/
+logs/
+.env
+.coverage
+*.pyc
+*.swp
+*.sqlite3
