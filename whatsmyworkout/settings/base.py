@@ -5,12 +5,16 @@ Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
     python manage.py runserver --settings=tickit_project.settings.base
 """
 import os
+import sys
 from unipath import Path
 import dj_database_url
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).ancestor(3)
+PROJECT_DIR = os.path.join(BASE_DIR, 'whatsmyworkout')
+# Add PROJECT_DIR to the system path.
+sys.path.insert(0, PROJECT_DIR)
 
 # Application definition
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -29,6 +33,8 @@ INSTALLED_APPS = (
     # Third-party apps
     'django_extensions',
     'django_wsgiserver',
+    # Projects apps
+    'exercise',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +86,51 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'whatsmyworkout', 'static'),
 )
+
+
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/whatsmyworkout.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 Mb
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+        'request_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/django_request.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 Mb
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+    }
+}
