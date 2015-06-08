@@ -5,11 +5,15 @@ Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
     python manage.py runserver --settings=tickit_project.settings.base
 """
 import os
+import sys
 from unipath import Path
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).ancestor(3)
+PROJECT_DIR = os.path.join(BASE_DIR, 'whatsmyworkout')
+# Add PROJECT_DIR to the system path.
+sys.path.insert(0, PROJECT_DIR)
 
 # Application definition
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -26,6 +30,8 @@ INSTALLED_APPS = (
     # Third-party apps
     'django_extensions',
     'django_wsgiserver',
+    # Projects apps
+    'exercise',
 )
 
 MIDDLEWARE_CLASSES = (
