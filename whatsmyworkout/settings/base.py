@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django_wsgiserver',
     # Projects apps
     'exercise',
+    'workout',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,9 +65,6 @@ TEMPLATES = [
         },
     },
 ]
-#TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
-#    'django.core.context_processors.request',
-#)
 
 
 # Database
@@ -138,3 +136,12 @@ LOGGING = {
         },
     }
 }
+
+
+# Authentication
+AUTH_USER_MODEL = 'workout.WorkoutUser'
+ANONYMOUS_USER_ID = -1
+#LOGIN_REDIRECT_URL = '/'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
