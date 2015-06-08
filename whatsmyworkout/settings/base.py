@@ -8,6 +8,7 @@ import os
 import sys
 from unipath import Path
 import dj_database_url
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,6 +25,7 @@ ROOT_URLCONF = 'whatsmyworkout.urls'
 WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
 
 INSTALLED_APPS = (
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,7 +38,6 @@ INSTALLED_APPS = (
     # Projects apps
     'exercise',
 )
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,7 +48,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -59,10 +59,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
 ]
+#TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
+#    'django.core.context_processors.request',
+#)
 
 
 # Database
