@@ -6,6 +6,7 @@ Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
 """
 import os
 from unipath import Path
+import dj_database_url
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -15,6 +16,8 @@ BASE_DIR = Path(__file__).ancestor(3)
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ.get('DEBUG', False)
 ALLOWED_HOSTS = []
+ROOT_URLCONF = 'whatsmyworkout.urls'
+WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -39,8 +42,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'whatsmyworkout.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -57,16 +58,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
-
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {'default': dj_database_url.config()}
 
 
 # Internationalization
