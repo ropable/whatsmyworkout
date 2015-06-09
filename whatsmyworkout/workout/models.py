@@ -6,10 +6,12 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class UserManager(BaseUserManager):
+    """A custom Manager for the WorkoutUser model.
+    """
     use_in_migrations = True
 
     def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
-        """Creates and saves a User with the given email and password.
+        """Creates and saves a WorkoutUser with the given email and password.
         """
         if not email:
             raise ValueError('The email must be set')
@@ -28,7 +30,7 @@ class UserManager(BaseUserManager):
 
 
 class WorkoutUser(AbstractBaseUser, PermissionsMixin):
-    """
+    """Custom authentication model for the whatsmyworkout project.
     Password and email are required. Other fields are optional.
     """
     email = models.EmailField(_('email address'), unique=True)
@@ -49,9 +51,7 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-
     objects = UserManager()
-
     USERNAME_FIELD = 'email'
 
     class Meta:
