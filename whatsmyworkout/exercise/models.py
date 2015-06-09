@@ -8,7 +8,7 @@ class ExerciseCategory(models.Model):
     name = models.CharField(max_length=256)
 
     def __str__(self):
-        return name
+        return self.name
 
 
 @python_2_unicode_compatible
@@ -16,7 +16,7 @@ class Equipment(models.Model):
     name = models.CharField(max_length=256)
 
     def __str__(self):
-        return name
+        return self.name
 
 
 @python_2_unicode_compatible
@@ -37,4 +37,4 @@ class Exercise(models.Model):
     demos = models.ManyToManyField(Demo, blank=True)
 
     def __str__(self):
-        return name
+        return self.name
