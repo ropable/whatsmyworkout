@@ -8,7 +8,6 @@ import os
 import sys
 from unipath import Path
 import dj_database_url
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,21 +19,29 @@ sys.path.insert(0, PROJECT_DIR)
 # Application definition
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ.get('DEBUG', False)
+TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'whatsmyworkout.urls'
 WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
-
+SITE_ID = 1
 INSTALLED_APPS = (
     'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Third-party apps
     'django_extensions',
     'django_wsgiserver',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
     # Projects apps
     'exercise',
     'workout',
@@ -61,6 +68,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.request',
+                # `allauth` specific context processors
+                'allauth.account.context_processors.account',
+                'allauth.socialaccount.context_processors.socialaccount',
             ],
         },
     },
@@ -144,4 +154,25 @@ ANONYMOUS_USER_ID = -1
 #LOGIN_REDIRECT_URL = '/'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+
+# django-allauth configuration
+ACCOUNT_AUTHENTICATION_METHOD = ('email')
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email', 'publish_stream'],
+        'METHOD': 'js_sdk'
+    },
+    'google': {
+        'SCOPE': [
+            'https://www.googleapis.com/auth/userinfo.profile'],
+        'AUTH_PARAMS': {'access_type': 'online'}
+    }
+}

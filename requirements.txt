@@ -7,3 +7,4 @@ dj-database-url==0.3.0
 django-wsgiserver==0.8.0rc1
 django-extensions==1.5.5
 django-suit==0.2.13
+django-allauth==0.20.0
