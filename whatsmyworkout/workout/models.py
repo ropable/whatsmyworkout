@@ -2,7 +2,9 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.core.mail import send_mail
 from django.utils import timezone
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+from exercise.models import Exercise
 
 
 class UserManager(BaseUserManager):
@@ -29,6 +31,7 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, True, True, **extra_fields)
 
 
+@python_2_unicode_compatible
 class WorkoutUser(AbstractBaseUser, PermissionsMixin):
     """Custom authentication model for the whatsmyworkout project.
     Password and email are required. Other fields are optional.
@@ -51,6 +54,9 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+    workout_target = models.PositiveIntegerField(default=0)
+    # TODO: save user timezone
+
     objects = UserManager()
     USERNAME_FIELD = 'email'
 
@@ -58,7 +64,53 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('workout user')
         verbose_name_plural = _('workout users')
 
+    def __str__(self):
+        return self.email
+
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Sends an email to this WorkoutUser.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def generate_workout(self):
+        """Method to take a user's target workout difficulty, and generate a
+        suitable series of exercises for the user.
+        """
+        # TODO: stub
+        pass
+
+
+@python_2_unicode_compatible
+class Workout(models.Model):
+    """A collection of exercise activities, delivered to a WorkoutUser.
+    Has a target and calculated difficulty. Should record any feedback by the
+    user.
+    """
+    FEEDBACK_CHOICES = (
+        (0, _('Easy')),
+        (1, _('Okay')),
+        (2, _('Hard')),
+    )
+    user = models.ForeignKey(WorkoutUser)
+    sets = models.PositiveIntegerField()
+    target_difficulty = models.PositiveIntegerField()
+    generated = models.DateTimeField()
+    delivered = models.DateTimeField(null=True)
+    feedback = models.PositiveSmallIntegerField(
+        null=True, choices=FEEDBACK_CHOICES)
+
+    def __str__(self):
+        return '{}:{}'.format(self.user, self.target_difficulty)
+
+
+@python_2_unicode_compatible
+class Activity(models.Model):
+    """A single activity, part of a single Workout.
+    Acts as a link field between Workout and Exercise, records reps.
+    """
+    workout = models.ForeignKey(Workout)
+    exercise = models.ForeignKey(Exercise)
+    reps = models.PositiveIntegerField()
+
+    def __str__(self):
+        return '{} x {}'.format(self.exercise, self.reps)
