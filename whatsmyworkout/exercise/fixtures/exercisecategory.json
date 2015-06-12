@@ -1,0 +1,23 @@
+[
+{
+    "fields": {
+        "name": "Core"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Arms"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Legs"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 3
+}
+]

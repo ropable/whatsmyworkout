@@ -1,0 +1,80 @@
+[
+{
+    "fields": {
+        "difficulty": 4,
+        "equipment_req": [],
+        "name": "Pushup",
+        "categories": [
+            2
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 1
+},
+{
+    "fields": {
+        "difficulty": 2,
+        "equipment_req": [],
+        "name": "Kneeling pushup",
+        "categories": [
+            2
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 2
+},
+{
+    "fields": {
+        "difficulty": 4,
+        "equipment_req": [],
+        "name": "Plank",
+        "categories": [
+            1
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 3
+},
+{
+    "fields": {
+        "difficulty": 3,
+        "equipment_req": [],
+        "name": "Squat",
+        "categories": [
+            3
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 4
+},
+{
+    "fields": {
+        "difficulty": 4,
+        "equipment_req": [],
+        "name": "Lunge",
+        "categories": [
+            3
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 5
+},
+{
+    "fields": {
+        "difficulty": 5,
+        "equipment_req": [],
+        "name": "Mountain climber",
+        "categories": [
+            1
+        ],
+        "demos": []
+    },
+    "model": "exercise.exercise",
+    "pk": 6
+}
+]

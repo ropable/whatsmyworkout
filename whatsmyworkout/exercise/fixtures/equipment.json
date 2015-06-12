@@ -1,0 +1,30 @@
+[
+{
+    "fields": {
+        "name": "Skipping rope"
+    },
+    "model": "exercise.equipment",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Chinup bar"
+    },
+    "model": "exercise.equipment",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "Step"
+    },
+    "model": "exercise.equipment",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "Ball"
+    },
+    "model": "exercise.equipment",
+    "pk": 4
+}
+]
