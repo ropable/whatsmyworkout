@@ -2,7 +2,7 @@
 Django settings for whatsmyworkout project.
 Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
 
-    python manage.py runserver --settings=tickit_project.settings.base
+    python manage.py runserver --settings=whatsmyworkout.settings.base
 """
 import os
 import sys
@@ -153,7 +153,7 @@ LOGGING = {
 # Authentication
 AUTH_USER_MODEL = 'workout.WorkoutUser'
 ANONYMOUS_USER_ID = -1
-#LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods
@@ -164,8 +164,10 @@ AUTHENTICATION_BACKENDS = (
 # django-allauth configuration
 ACCOUNT_AUTHENTICATION_METHOD = ('email')
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
