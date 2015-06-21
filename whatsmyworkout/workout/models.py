@@ -55,7 +55,8 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    workout_target = models.PositiveIntegerField(default=0)
+    workout_target = models.PositiveIntegerField(default=300)
+    exercise_target = models.PositiveIntegerField(default=20)
     # TODO: save user timezone
 
     objects = UserManager()

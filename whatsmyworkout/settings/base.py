@@ -4,10 +4,10 @@ Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
 
     python manage.py runserver --settings=whatsmyworkout.settings.base
 """
+import dj_database_url
 import os
 import sys
 from unipath import Path
-import dj_database_url
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -17,9 +17,9 @@ PROJECT_DIR = os.path.join(BASE_DIR, 'whatsmyworkout')
 sys.path.insert(0, PROJECT_DIR)
 
 # Application definition
-SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = True if os.environ.get('DEBUG', False) else False
 TEMPLATE_DEBUG = DEBUG
+SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'whatsmyworkout.urls'
 WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
