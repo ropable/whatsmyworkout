@@ -92,7 +92,9 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
+# Ensure that the media directory exists:
+if not os.path.exists(os.path.join(BASE_DIR, 'media')):
+    os.mkdir(os.path.join(BASE_DIR, 'media'))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -103,6 +105,9 @@ STATICFILES_DIRS = (
 
 
 # Logging configuration
+# Ensure that the logs directory exists:
+if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
+    os.mkdir(os.path.join(BASE_DIR, 'logs'))
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
