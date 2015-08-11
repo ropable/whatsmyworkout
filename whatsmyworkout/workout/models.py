@@ -86,6 +86,13 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         suitable series of exercises for the user.
         """
         # TODO: stub
+        # Divide workout_target by 5, then divide this by exercise_target.
+        # This is the number of exercises in the workout (min 2).
+        # Fill exercises: core, arm/legs, arm/legs/core, repeat.
+        # Divide exercise_target by 5. This is the target exercise difficulty.
+        # Select from exercises +/-1 from that number.
+        # For each exercise, divide exercise_target by its difficult and round off.
+        # This is the number of reps for that exercise.
         pass
 
 
