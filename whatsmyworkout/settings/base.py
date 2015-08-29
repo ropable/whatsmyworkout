@@ -18,7 +18,6 @@ sys.path.insert(0, PROJECT_DIR)
 
 # Application definition
 DEBUG = True if os.environ.get('DEBUG', False) else False
-TEMPLATE_DEBUG = DEBUG
 SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'whatsmyworkout.urls'

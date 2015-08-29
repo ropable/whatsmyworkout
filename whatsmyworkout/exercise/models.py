@@ -48,6 +48,7 @@ class Exercise(models.Model):
     demos = models.ManyToManyField(Demo, blank=True)
     isometric = models.BooleanField(
         default=False, help_text='An isometric exercise motion.')
+    image = models.ImageField(upload_to='exercises', blank=True)
 
     def __str__(self):
         return self.name

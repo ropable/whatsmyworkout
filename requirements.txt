@@ -1,11 +1,12 @@
-Django==1.8.3
+Django==1.8.4
 Unipath==1.1
 pytz==2015.4
-#psycopg2==2.5.3
-honcho==0.5.0
+#psycopg2==2.6.1
+honcho==0.6.6
 dj-static==0.0.6
 dj-database-url==0.3.0
 django-wsgiserver==0.8.0rc1
 django-extensions==1.5.5
 django-suit==0.2.13
 django-allauth==0.20.0
+Pillow==2.9.0
