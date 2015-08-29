@@ -55,9 +55,12 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    workout_target = models.PositiveIntegerField(default=135)
-    set_target = models.PositiveIntegerField(default=15)
-    exercise_target = models.PositiveIntegerField(default=3)
+    workout_target = models.PositiveIntegerField(
+        default=135, help_text='Represents the target difficult for a whole workout')
+    set_target = models.PositiveIntegerField(
+        default=15, help_text='Represents the target difficulty of a single set')
+    exercise_target = models.PositiveIntegerField(
+        default=3, help_text='Represents the typical difficulty of exercise assigned')
     # TODO: save user timezone
 
     objects = UserManager()
@@ -99,7 +102,8 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
 
 @python_2_unicode_compatible
 class Workout(models.Model):
-    """A collection of exercise activities, delivered to a WorkoutUser.
+    """A collection of exercise sets, delivered to a WorkoutUser.
+    Target difficulty is sum of all set difficulties, times repeats.
     Has a target and calculated difficulty. Should record any feedback by the
     user.
     """
@@ -109,7 +113,7 @@ class Workout(models.Model):
         (2, _('Hard')),
     )
     user = models.ForeignKey(WorkoutUser)
-    sets = models.PositiveIntegerField()
+    repeats = models.PositiveIntegerField()
     target_difficulty = models.PositiveIntegerField()
     generated = models.DateTimeField()
     delivered = models.DateTimeField(null=True)
@@ -121,13 +125,19 @@ class Workout(models.Model):
 
 
 @python_2_unicode_compatible
-class Activity(models.Model):
-    """A single activity, part of a single Workout.
+class Set(models.Model):
+    """A single exercise set, part of a single Workout.
     Acts as a link field between Workout and Exercise, records reps.
+    Set difficulty is exercise difficult * reps or (seconds/6).
+    # TODO: clean method: reps or seconds, not both.
+    # TODO: seconds can only be set for an isometric exercise.
     """
     workout = models.ForeignKey(Workout)
     exercise = models.ForeignKey(Exercise)
-    reps = models.PositiveIntegerField()
+    reps = models.PositiveIntegerField(
+        blank=True, help_text='Reps for repeating movements')
+    seconds = models.PositiveIntegerField(
+        blank=True, help_text='Seconds to hold isometric movement')
 
     def __str__(self):
         return '{} x {}'.format(self.exercise, self.reps)
