@@ -1,78 +1,109 @@
 [
 {
     "fields": {
-        "difficulty": 4,
+        "isometric": false,
+        "name": "Wall Pushup",
+        "demos": [
+            2
+        ],
+        "image": "",
+        "difficulty": 1,
         "equipment_req": [],
-        "name": "Pushup",
         "categories": [
             2
         ],
-        "demos": []
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 1
 },
 {
     "fields": {
+        "isometric": false,
+        "name": "Box pushup",
+        "demos": [
+            3,
+            4
+        ],
+        "image": "",
         "difficulty": 2,
         "equipment_req": [],
-        "name": "Kneeling pushup",
         "categories": [
             2
         ],
-        "demos": []
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 2
 },
 {
     "fields": {
-        "difficulty": 4,
+        "isometric": false,
+        "name": "Leg Assisted Pull Up",
+        "demos": [
+            5
+        ],
+        "image": "",
+        "difficulty": 1,
         "equipment_req": [],
-        "name": "Plank",
         "categories": [
             1
         ],
-        "demos": []
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 3
 },
 {
     "fields": {
-        "difficulty": 3,
+        "isometric": false,
+        "name": "Assisted Squat",
+        "demos": [
+            1
+        ],
+        "image": "",
+        "difficulty": 1,
         "equipment_req": [],
-        "name": "Squat",
         "categories": [
             3
         ],
-        "demos": []
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 4
 },
 {
     "fields": {
-        "difficulty": 4,
-        "equipment_req": [],
-        "name": "Lunge",
-        "categories": [
-            3
+        "isometric": false,
+        "name": "Flat Knee Raise",
+        "demos": [
+            6
         ],
-        "demos": []
+        "image": "",
+        "difficulty": 1,
+        "equipment_req": [],
+        "categories": [
+            4
+        ],
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 5
 },
 {
     "fields": {
-        "difficulty": 5,
-        "equipment_req": [],
-        "name": "Mountain climber",
-        "categories": [
-            1
+        "isometric": false,
+        "name": "Bent Knee Bench Dip",
+        "demos": [
+            7
         ],
-        "demos": []
+        "image": "",
+        "difficulty": 1,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
     },
     "model": "exercise.exercise",
     "pk": 6

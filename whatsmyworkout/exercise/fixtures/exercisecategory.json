@@ -1,23 +1,58 @@
 [
 {
     "fields": {
-        "name": "Core"
+        "name": "Pull Ups"
     },
     "model": "exercise.exercisecategory",
     "pk": 1
 },
 {
     "fields": {
-        "name": "Arms"
+        "name": "Push Ups"
     },
     "model": "exercise.exercisecategory",
     "pk": 2
 },
 {
     "fields": {
-        "name": "Legs"
+        "name": "Squats"
     },
     "model": "exercise.exercisecategory",
     "pk": 3
+},
+{
+    "fields": {
+        "name": "Leg Raises"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "Dips"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "Horizontal Pulls"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 6
+},
+{
+    "fields": {
+        "name": "Handstand Push Ups"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 7
+},
+{
+    "fields": {
+        "name": "Planks"
+    },
+    "model": "exercise.exercisecategory",
+    "pk": 8
 }
 ]

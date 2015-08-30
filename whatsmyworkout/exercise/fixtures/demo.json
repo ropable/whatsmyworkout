@@ -1,0 +1,58 @@
+[
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=OuR_Fp7AB0c&start=4",
+        "description": "Assisted Bodyweight Squat"
+    },
+    "model": "exercise.demo",
+    "pk": 1
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=1RtM3L00BUU&start=37",
+        "description": "Wall Pushup"
+    },
+    "model": "exercise.demo",
+    "pk": 2
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=3K8T3JSA2H8",
+        "description": "Box Pushup"
+    },
+    "model": "exercise.demo",
+    "pk": 3
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=tbTqTVuRNOk",
+        "description": "Box Pushup"
+    },
+    "model": "exercise.demo",
+    "pk": 4
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=_M8NHO7tb1I&start=10",
+        "description": "Leg Assisted Pull Up"
+    },
+    "model": "exercise.demo",
+    "pk": 5
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=RnakxT5MIbE",
+        "description": "Flat Knee Raise"
+    },
+    "model": "exercise.demo",
+    "pk": 6
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=13Job_1g5Ck",
+        "description": "Bent Knee Bench Dips"
+    },
+    "model": "exercise.demo",
+    "pk": 7
+}
+]
