@@ -7,7 +7,7 @@ from django.utils.text import Truncator
 class ExerciseCategory(models.Model):
     """Describes the body focus area for different exercise motions.
     """
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
         return self.name
@@ -17,7 +17,7 @@ class ExerciseCategory(models.Model):
 class Equipment(models.Model):
     """Describes basic pieces of equipment used for difference exercises.
     """
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
         return self.name
@@ -27,7 +27,7 @@ class Equipment(models.Model):
 class Demo(models.Model):
     """A URL to a demonstration for how to correctly perform a single exercise.
     """
-    url = models.URLField()
+    url = models.URLField(unique=True)
     description = models.CharField(max_length=512, null=True, blank=True)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Demo(models.Model):
 class Exercise(models.Model):
     """Describes a single exercise motion, with a relative difficulty.
     """
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
     desc = models.CharField(
         max_length=256, null=True, blank=True,
         help_text='A short description of the exercise motion.')

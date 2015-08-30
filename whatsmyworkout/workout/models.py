@@ -70,6 +70,19 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('workout user')
         verbose_name_plural = _('workout users')
 
+    def generate_workout(self):
+        """Method to take a user's target workout difficulty, and generate a
+        suitable series of exercises for the user.
+        """
+        # Divide workout_target by 3, then divide result by set_target.
+        # Result is the number of sets (rounded).
+        # Construct sets using exercises of exercise_target/target+1, to be
+        # within 10% of set_target.
+        # If set reps > 8, increase exercise difficulty by 1 and recalculate.
+        # Choose each set exercise from a different category.
+        sets = int(round((self.workout_target / 3) / self.set_target))
+        return sets
+
     def __str__(self):
         return self.email
 
@@ -84,20 +97,6 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         """Sends an email to this WorkoutUser.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
-
-    def generate_workout(self):
-        """Method to take a user's target workout difficulty, and generate a
-        suitable series of exercises for the user.
-        """
-        # TODO: stub
-        # Divide workout_target by 5, then divide this by exercise_target.
-        # This is the number of exercises in the workout (min 2).
-        # Fill exercises: core, arm/legs, arm/legs/core, repeat.
-        # Divide exercise_target by 5. This is the target exercise difficulty.
-        # Select from exercises +/-1 from that number.
-        # For each exercise, divide exercise_target by its difficult and round off.
-        # This is the number of reps for that exercise.
-        pass
 
 
 @python_2_unicode_compatible
