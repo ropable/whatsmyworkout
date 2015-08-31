@@ -107,5 +107,431 @@
     },
     "model": "exercise.exercise",
     "pk": 6
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Vertical Pulls",
+        "demos": [
+            8
+        ],
+        "image": "",
+        "difficulty": 1,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 7
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Kneeling Plank",
+        "demos": [
+            9
+        ],
+        "image": "",
+        "difficulty": 1,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 8
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Kneeling Side Plank",
+        "demos": [
+            10
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 9
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Assisted Deep Squat",
+        "demos": [
+            11
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 10
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Jackknife Pull Up",
+        "demos": [
+            12
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 11
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Pike Push Up",
+        "demos": [
+            13
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 12
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline Pike Push Up",
+        "demos": [
+            14
+        ],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 13
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Incline Pike Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 14
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Squats",
+        "demos": [
+            15
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 15
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Deep Squats",
+        "demos": [
+            16
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 16
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Bulgarian Split Squats",
+        "demos": [
+            17
+        ],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 17
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Half Pull Up",
+        "demos": [
+            18
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 18
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Pull Up",
+        "demos": [
+            19
+        ],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 19
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Flat Bent Leg Raise",
+        "demos": [
+            20
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 20
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Knee Raise",
+        "demos": [
+            21
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 21
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Bent Leg Raise",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 22
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Kneeling Push Up",
+        "demos": [
+            22
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 23
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Push Up",
+        "demos": [
+            23
+        ],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 24
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Bench Dip",
+        "demos": [
+            24
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 25
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Elevated Bench Dip",
+        "demos": [
+            25
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 26
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Inverted Row Legs Bent",
+        "demos": [
+            27
+        ],
+        "image": "",
+        "difficulty": 2,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 27
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Inverted Row",
+        "demos": [
+            28
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 28
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Plank",
+        "demos": [
+            29
+        ],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 29
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Side Plank",
+        "demos": [
+            30
+        ],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 30
 }
 ]

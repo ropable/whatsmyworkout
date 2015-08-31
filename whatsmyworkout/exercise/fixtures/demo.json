@@ -54,5 +54,189 @@
     },
     "model": "exercise.demo",
     "pk": 7
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=_Ga00eHfrHA&start=4",
+        "description": "Vertical Pulls"
+    },
+    "model": "exercise.demo",
+    "pk": 8
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=Ns1NS9ThNhI",
+        "description": "Kneeling Plank"
+    },
+    "model": "exercise.demo",
+    "pk": 9
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=FR4_61A1H88&start=10",
+        "description": "Kneeling Side Plank"
+    },
+    "model": "exercise.demo",
+    "pk": 10
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=szDNayBTDSI&start=50",
+        "description": "Assisted Deep Squat"
+    },
+    "model": "exercise.demo",
+    "pk": 11
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=0AGflL3itws&start=12",
+        "description": "Jackknife Pull Ups"
+    },
+    "model": "exercise.demo",
+    "pk": 12
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=EA8g7q9jauM",
+        "description": "Pike Push Ups"
+    },
+    "model": "exercise.demo",
+    "pk": 13
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=fReh5H7ZFOQ",
+        "description": "Decline Pike Push Up"
+    },
+    "model": "exercise.demo",
+    "pk": 14
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=p3g4wAsu0R4&start=30",
+        "description": "Squats"
+    },
+    "model": "exercise.demo",
+    "pk": 15
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=8e9dKwN1yc0",
+        "description": "Deep Squats"
+    },
+    "model": "exercise.demo",
+    "pk": 16
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=2C-uNgKwPLE&start=75",
+        "description": "Bulgarian Split Squats"
+    },
+    "model": "exercise.demo",
+    "pk": 17
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=cPGRw-T5SpY&start=6",
+        "description": "Half Pull Ups"
+    },
+    "model": "exercise.demo",
+    "pk": 18
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=GBqAZP6jquc&start=43",
+        "description": "Pull Up"
+    },
+    "model": "exercise.demo",
+    "pk": 19
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=6NIWN_oRjAU&start=4",
+        "description": "Flat Bent Leg Raise"
+    },
+    "model": "exercise.demo",
+    "pk": 20
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=Gw3RyyARhBQ",
+        "description": "Hanging Knee Raise"
+    },
+    "model": "exercise.demo",
+    "pk": 21
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=t6UN583sT9A",
+        "description": "Kneeling Push Up"
+    },
+    "model": "exercise.demo",
+    "pk": 22
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=Eh00_rniF8E&start=50",
+        "description": "Push Up"
+    },
+    "model": "exercise.demo",
+    "pk": 23
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=0326dy_-CzM&start=45",
+        "description": "Bench Dip"
+    },
+    "model": "exercise.demo",
+    "pk": 24
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=5Hw2fkZu3qU",
+        "description": "Elevated Bench Dip"
+    },
+    "model": "exercise.demo",
+    "pk": 25
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=m1PPCklbBlo&start=18",
+        "description": "Vertical Pulls"
+    },
+    "model": "exercise.demo",
+    "pk": 26
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=8DelpQ4nhJU&start=3",
+        "description": "Inverted Row Legs Bent"
+    },
+    "model": "exercise.demo",
+    "pk": 27
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=t97EjUsCFNw&start=10",
+        "description": "Inverted Row"
+    },
+    "model": "exercise.demo",
+    "pk": 28
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=IhBmQ-VdRL0&start=11",
+        "description": "Plank"
+    },
+    "model": "exercise.demo",
+    "pk": 29
+},
+{
+    "fields": {
+        "url": "https://www.youtube.com/watch?v=z4DjimUbvGc&start=55",
+        "description": "Side Plank"
+    },
+    "model": "exercise.demo",
+    "pk": 30
 }
 ]

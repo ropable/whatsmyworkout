@@ -22,6 +22,9 @@ class Equipment(models.Model):
     """
     name = models.CharField(max_length=256, unique=True)
 
+    class Meta:
+        verbose_name_plural = 'equipment'
+
     def __str__(self):
         return self.name
 
