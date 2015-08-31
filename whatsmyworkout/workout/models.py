@@ -1,11 +1,13 @@
 from allauth.account.models import EmailAddress
+from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.core.mail import send_mail
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-from exercise.models import Exercise
+from exercise.models import ExerciseCategory, Exercise
+import random
 
 
 class UserManager(BaseUserManager):
@@ -56,11 +58,11 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
     workout_target = models.PositiveIntegerField(
-        default=135, help_text='Represents the target difficult for a whole workout')
+        default=90, help_text='Represents the target difficult for a whole workout')
     set_target = models.PositiveIntegerField(
-        default=15, help_text='Represents the target difficulty of a single set')
+        default=10, help_text='Represents the target difficulty of a single set')
     exercise_target = models.PositiveIntegerField(
-        default=3, help_text='Represents the typical difficulty of exercise assigned')
+        default=2, help_text='Represents the typical difficulty of exercise assigned')
     # TODO: save user timezone
 
     objects = UserManager()
@@ -80,8 +82,31 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         # within 10% of set_target.
         # If set reps > 8, increase exercise difficulty by 1 and recalculate.
         # Choose each set exercise from a different category.
-        sets = int(round((self.workout_target / 3) / self.set_target))
-        return sets
+        sets_n = int(round((self.workout_target / 3) / self.set_target))
+        categories = random.sample([c for c in ExerciseCategory.objects.all()], sets_n)
+        sets = []
+        for c in categories:
+            exercises = list(Exercise.objects.filter(
+                categories__in=[c],
+                difficulty__in=[self.exercise_target, self.exercise_target+1]))
+            exercise = random.choice(exercises)
+            # Handle repeated/isometric exercises.
+            if exercise.isometric:
+                seconds = int(round((self.set_target * 3) / exercise.difficulty))
+                new_set = Set.objects.get_or_create(exercise=exercise, seconds=seconds)[0]
+            else:
+                reps = int(round(self.set_target / exercise.difficulty))
+                new_set = Set.objects.get_or_create(exercise=exercise, reps=reps)[0]
+            sets.append(new_set)
+
+        # Generate the workout object.
+        workout = Workout(
+            user=self, repeats=3, target_difficulty=self.workout_target,
+            generated=datetime.now())
+        workout.save()
+        for s in sets:
+            workout.sets.add(s)
+        return workout
 
     def __str__(self):
         return self.email
@@ -100,6 +125,29 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
 
 
 @python_2_unicode_compatible
+class Set(models.Model):
+    """A single exercise set, records reps.
+    Set difficulty is exercise difficult * reps or (seconds/6).
+    # TODO: clean method: reps or seconds, not both.
+    # TODO: seconds can only be set for an isometric exercise.
+    """
+    exercise = models.ForeignKey(Exercise)
+    reps = models.PositiveIntegerField(
+        null=True, blank=True, help_text='Reps for repeating movements')
+    seconds = models.PositiveIntegerField(
+        null=True, blank=True, help_text='Seconds to hold isometric movement')
+
+    class Meta:
+        unique_together = (('exercise', 'reps'), ('exercise', 'seconds'))
+
+    def __str__(self):
+        if self.reps:
+            return '{} x {}'.format(self.exercise, self.reps)
+        else:
+            return '{} x {}s'.format(self.exercise, self.seconds)
+
+
+@python_2_unicode_compatible
 class Workout(models.Model):
     """A collection of exercise sets, delivered to a WorkoutUser.
     Target difficulty is sum of all set difficulties, times repeats.
@@ -112,6 +160,7 @@ class Workout(models.Model):
         (2, _('Hard')),
     )
     user = models.ForeignKey(WorkoutUser)
+    sets = models.ManyToManyField(Set)
     repeats = models.PositiveIntegerField()
     target_difficulty = models.PositiveIntegerField()
     generated = models.DateTimeField()
@@ -120,23 +169,4 @@ class Workout(models.Model):
         null=True, choices=FEEDBACK_CHOICES)
 
     def __str__(self):
-        return '{}:{}'.format(self.user, self.target_difficulty)
-
-
-@python_2_unicode_compatible
-class Set(models.Model):
-    """A single exercise set, part of a single Workout.
-    Acts as a link field between Workout and Exercise, records reps.
-    Set difficulty is exercise difficult * reps or (seconds/6).
-    # TODO: clean method: reps or seconds, not both.
-    # TODO: seconds can only be set for an isometric exercise.
-    """
-    workout = models.ForeignKey(Workout)
-    exercise = models.ForeignKey(Exercise)
-    reps = models.PositiveIntegerField(
-        blank=True, help_text='Reps for repeating movements')
-    seconds = models.PositiveIntegerField(
-        blank=True, help_text='Seconds to hold isometric movement')
-
-    def __str__(self):
-        return '{} x {}'.format(self.exercise, self.reps)
+        return '{} ({})'.format(self.user, self.target_difficulty)
