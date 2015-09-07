@@ -11,3 +11,4 @@ django-suit==0.2.13
 django-allauth==0.20.0
 Pillow==2.9.0
 django-registration-redux==1.2
+django-debu-toolbar==1.3.2

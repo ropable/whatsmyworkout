@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/landing-page.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+{% block head_title %}{% trans "Sign up" %}{% endblock %}
+
+{% block content %}
+<div class="signup-div">
+    <div class="container">
+        <h1>{% trans "Sign Up" %}</h1>
+
+        <form class="signup" id="signup_form" method="post" action="">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+        </form>
+    </div>
+    <!-- /.container -->
+</div>
+{% endblock %}
