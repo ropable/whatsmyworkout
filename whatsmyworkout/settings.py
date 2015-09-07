@@ -11,7 +11,7 @@ from unipath import Path
 
 # Project paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = Path(__file__).ancestor(3)
+BASE_DIR = Path(__file__).ancestor(2)
 PROJECT_DIR = os.path.join(BASE_DIR, 'whatsmyworkout')
 # Add PROJECT_DIR to the system path.
 sys.path.insert(0, PROJECT_DIR)
