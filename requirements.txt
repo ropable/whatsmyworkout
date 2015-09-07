@@ -10,3 +10,4 @@ django-extensions==1.5.5
 django-suit==0.2.13
 django-allauth==0.20.0
 Pillow==2.9.0
+django-registration-redux==1.2
