@@ -6,8 +6,7 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-from exercise.models import ExerciseCategory, Exercise
-import random
+from exercise.models import Exercise
 
 
 class UserManager(BaseUserManager):
@@ -57,12 +56,15 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    workout_target = models.PositiveIntegerField(
-        default=90, help_text='Represents the target difficult for a whole workout')
+    series_target = models.PositiveIntegerField(
+        default=30,
+        help_text='Represents the target difficult for a workout series')
     set_target = models.PositiveIntegerField(
-        default=10, help_text='Represents the target difficulty of a single set')
+        default=10,
+        help_text='Represents the target difficulty of a single set')
     exercise_target = models.PositiveIntegerField(
-        default=2, help_text='Represents the typical difficulty of exercise assigned')
+        default=2,
+        help_text='Represents the typical difficulty of exercise assigned')
     # TODO: save user timezone
 
     objects = UserManager()
@@ -71,42 +73,6 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('workout user')
         verbose_name_plural = _('workout users')
-
-    def generate_workout(self):
-        """Method to take a user's target workout difficulty, and generate a
-        suitable series of exercises for the user.
-        """
-        # Divide workout_target by 3, then divide result by set_target.
-        # Result is the number of sets (rounded).
-        # Construct sets using exercises of exercise_target/target+1, to be
-        # within 10% of set_target.
-        # If set reps > 8, increase exercise difficulty by 1 and recalculate.
-        # Choose each set exercise from a different category.
-        sets_n = int(round((self.workout_target / 3) / self.set_target))
-        categories = random.sample([c for c in ExerciseCategory.objects.all()], sets_n)
-        sets = []
-        for c in categories:
-            exercises = list(Exercise.objects.filter(
-                categories__in=[c],
-                difficulty__in=[self.exercise_target, self.exercise_target+1]))
-            exercise = random.choice(exercises)
-            # Handle repeated/isometric exercises.
-            if exercise.isometric:
-                seconds = int(round((self.set_target * 3) / exercise.difficulty))
-                new_set = Set.objects.get_or_create(exercise=exercise, seconds=seconds)[0]
-            else:
-                reps = int(round(self.set_target / exercise.difficulty))
-                new_set = Set.objects.get_or_create(exercise=exercise, reps=reps)[0]
-            sets.append(new_set)
-
-        # Generate the workout object.
-        workout = Workout(
-            user=self, repeats=3, target_difficulty=self.workout_target,
-            generated=datetime.now())
-        workout.save()
-        for s in sets:
-            workout.sets.add(s)
-        return workout
 
     def __str__(self):
         return self.email
@@ -122,6 +88,21 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         """Sends an email to this WorkoutUser.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def get_workout(self):
+        from workout.utils import generate_series
+        series = generate_series(
+            self.series_target, self.set_target, self.exercise_target)
+
+        workout = Workout(
+            user=self, repeats=3, target_difficulty=self.workout_target,
+            generated=datetime.now())
+        workout.save()
+
+        for s in series:
+            workout.sets.add(s)
+
+        return workout
 
 
 @python_2_unicode_compatible
