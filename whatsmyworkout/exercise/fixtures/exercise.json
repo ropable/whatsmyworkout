@@ -536,7 +536,9 @@
         "image": "",
         "difficulty": 4,
         "equipment_req": [],
-        "categories": [],
+        "categories": [
+            8
+        ],
         "desc": ""
     },
     "model": "exercise.exercise",

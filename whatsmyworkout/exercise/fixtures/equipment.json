@@ -8,7 +8,7 @@
 },
 {
     "fields": {
-        "name": "Chinup bar"
+        "name": "Pull up bar"
     },
     "model": "exercise.equipment",
     "pk": 2
@@ -22,7 +22,7 @@
 },
 {
     "fields": {
-        "name": "Ball"
+        "name": "Ball (basketball, football, netball etc.)"
     },
     "model": "exercise.equipment",
     "pk": 4
@@ -33,5 +33,12 @@
     },
     "model": "exercise.equipment",
     "pk": 5
+},
+{
+    "fields": {
+        "name": "Fit ball (inflatable Swiss ball)"
+    },
+    "model": "exercise.equipment",
+    "pk": 6
 }
 ]
