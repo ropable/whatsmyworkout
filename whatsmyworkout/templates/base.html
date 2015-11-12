@@ -24,19 +24,23 @@
 <body class="site">
 {% block body %}
     <!-- Navigation -->
-    {% comment %}
+    {% block topnav %}
+    <header>
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                {% comment %}
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Whats My Workout</a>
+                {% endcomment %}
+                <a class="navbar-brand topnav" href="/">Whats My Workout?</a>
             </div>
+            {% comment %}
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -45,33 +49,33 @@
                     </li>
                 </ul>
             </div>
+            {% endcomment %}
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    {% endcomment %}
+    </header>
+    {% endblock topnav %}
 
     <main class="site-content">
     {% block content %}{% endblock %}
     </main>
 
+    {% block footer %}
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#disclaimer">Disclaimer</a>
-                        </li>
+                        <li><a href="{% url 'workout' %}">Workout</a></li>
                         <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="http://startbootstrap.com/template-overviews/landing-page/">Theme from Start Bootstrap</a>
-                        </li>
+                        <li><a href="{% url 'disclaimer' %}">Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+    {% endblock footer %}
     {% endblock body %}
 
     {% block extra_body %}{% endblock %}

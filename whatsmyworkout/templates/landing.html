@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block topnav %}{% endblock %}
+
 {% block content %}
 <!-- Header -->
 <div class="landing-header">
@@ -11,21 +13,25 @@
                     <h3>A bodyweight strength workout on demand</h3>
                     <hr class="landing-divider">
                 </div><!-- /.landing-message -->
-                <div id="workout-form">
-                    <form class="form-inline">
-                        <button type="submit" class="btn btn-lg btn-default">
-                            <span class="button-diff">Easy</span>
-                        </button>
-                        <button type="submit" class="btn btn-lg btn-default">
-                            <span class="button-diff">Medium</span>
-                        </button>
-                        <button type="submit" class="btn btn-lg btn-default">
-                            <span class="button-diff">Advanced</span>
-                        </button>
-                    </form>
-                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="landing-buttons">
+                    <a href="workout?preset=easy" class="btn btn-lg btn-success">
+                        <span class="landing-button">Easy</span>
+                    </a>
+                    <a href="workout?preset=medium" class="btn btn-lg btn-warning">
+                        <span class="landing-button">Medium</span>
+                    </a>
+                    <a href="workout?preset=advanced" class="btn btn-lg btn-danger">
+                        <span class="landing-button">Advanced</span>
+                    </a>
+                </div><!-- /.landing-buttons -->
             </div>
         </div>
     </div><!-- /.container -->
 </div><!-- /.landing-header -->
 {% endblock content %}
+
+{% block footer %}{% endblock %}

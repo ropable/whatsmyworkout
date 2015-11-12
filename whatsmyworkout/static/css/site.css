@@ -12,17 +12,20 @@ https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
   flex: 1;
 }
 
-/*!
- * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+/* Basic Bootstrap style overrides */
+.navbar {
+    border: 0px;
+}
+
+.navbar-default .navbar-brand {
+    color: #f8f8f8;
+}
+nav a:hover {
+    color: #f8f8f8 !important;
+}
+
 body,
 html {
-    /*
-    width: 100%;
-    height: 100%;
-    */
     background-color: #a7cfdf;
 }
 
@@ -37,9 +40,30 @@ h6 {
     font-weight: 700;
 }
 
-.lead {
-    font-size: 18px;
-    font-weight: 400;
+.topnav {
+    background-color: #23538a;
+    font-size: 14px;
+}
+
+.workout-header {
+    padding-top: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: #23538a;
+    background: -moz-linear-gradient(top, #23538a 0%, #a7cfdf 83%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #23538a 0%,#a7cfdf 83%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #23538a 0%,#a7cfdf 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr='#a7cfdf',GradientType=0 ); /* IE6-9 */
+}
+.workout-message {
+    position: relative;
+    /*padding-top: 2%;
+    padding-bottom: 20%;*/
+}
+
+.workout-message > h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
 .landing-header {
@@ -88,7 +112,11 @@ h6 {
     }
 }
 
-.button-diff {
+.landing-buttons {
+    text-align: center;
+}
+
+.landing-button {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
@@ -97,7 +125,6 @@ h6 {
 
 footer {
     background-color: #a7cfdf;
-    text-align: center;
 }
 
 .section-heading {
@@ -110,11 +137,12 @@ footer {
     border-top: 3px solid #e7e7e7;
 }
 
-/* --------------- Unused CSS below -------------- */
-.topnav {
-    font-size: 14px;
+.lead {
+    font-size: 18px;
+    font-weight: 400;
 }
 
+/* --------------- Unused CSS below -------------- */
 .content-section-a {
     padding: 50px 0;
     background-color: #f8f8f8;

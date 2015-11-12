@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = patterns(
     '',
-    url(r'^$', views.LandingPage.as_view(), name='landing_page'),
-    url(r'^workout$', views.WorkoutPage.as_view(), name='workout_page'),
-    url(r'^why$', TemplateView.as_view(template_name='workout/why.html'), name='why_bodyweight'),
+    url(r'^$', views.TemplateView.as_view(template_name='landing.html'), name='landing'),
+    url(r'^workout$', views.WorkoutPage.as_view(), name='workout'),
+    url(r'^disclaimer$', TemplateView.as_view(template_name='disclaimer.html'), name='disclaimer'),
 )
