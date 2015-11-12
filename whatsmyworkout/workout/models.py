@@ -90,7 +90,7 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
     def get_workout(self):
-        from workout.utils import generate_series
+        from workout.utils import generate_series  # Prevent circular import.
         series = generate_series(
             self.series_target, self.set_target, self.exercise_target)
 
