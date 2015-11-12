@@ -1,0 +1,131 @@
+/*
+Sticky-footer flexbox CSS via:
+https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+*/
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+body,
+html {
+    /*
+    width: 100%;
+    height: 100%;
+    */
+    background-color: #a7cfdf;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.landing-header {
+    text-align: center;
+    color: #f8f8f8;
+    background: #23538a;
+    background: -moz-linear-gradient(top, #23538a 0%, #a7cfdf 83%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #23538a 0%,#a7cfdf 83%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #23538a 0%,#a7cfdf 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr='#a7cfdf',GradientType=0 ); /* IE6-9 */
+}
+
+.landing-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.landing-message {
+    position: relative;
+    padding-top: 20%;
+    /*padding-bottom: 20%;*/
+}
+
+.landing-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.landing-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .landing-message {
+        padding-bottom: 15%;
+    }
+
+    .landing-message > h1 {
+        font-size: 3em;
+    }
+
+    .landing-divider {
+        width: 100%;
+    }
+}
+
+.button-diff {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+footer {
+    background-color: #a7cfdf;
+    text-align: center;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+/* --------------- Unused CSS below -------------- */
+.topnav {
+    font-size: 14px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}

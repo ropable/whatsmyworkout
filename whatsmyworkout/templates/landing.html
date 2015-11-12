@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Header -->
+<div class="landing-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="landing-message">
+                    <h1>What's My Workout?</h1>
+                    <h3>A bodyweight strength workout on demand</h3>
+                    <hr class="landing-divider">
+                </div><!-- /.landing-message -->
+                <div id="workout-form">
+                    <form class="form-inline">
+                        <button type="submit" class="btn btn-lg btn-default">
+                            <span class="button-diff">Easy</span>
+                        </button>
+                        <button type="submit" class="btn btn-lg btn-default">
+                            <span class="button-diff">Medium</span>
+                        </button>
+                        <button type="submit" class="btn btn-lg btn-default">
+                            <span class="button-diff">Advanced</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container -->
+</div><!-- /.landing-header -->
+{% endblock content %}

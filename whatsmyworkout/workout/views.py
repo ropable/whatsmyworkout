@@ -1,10 +1,10 @@
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
 
 
 class LandingPage(TemplateView):
     """Project landing/signup page.
     """
-    template_name = 'workout/landing_page.html'
+    template_name = 'landing.html'
 
 
 class WorkoutPage(TemplateView):
