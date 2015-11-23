@@ -20,7 +20,7 @@
 {
     "fields": {
         "isometric": false,
-        "name": "Box pushup",
+        "name": "Box Push Up",
         "demos": [
             3,
             4
@@ -213,6 +213,7 @@
         "difficulty": 3,
         "equipment_req": [],
         "categories": [
+            2,
             7
         ],
         "desc": ""
@@ -231,6 +232,7 @@
         "difficulty": 4,
         "equipment_req": [],
         "categories": [
+            2,
             7
         ],
         "desc": ""
@@ -247,6 +249,7 @@
         "difficulty": 2,
         "equipment_req": [],
         "categories": [
+            2,
             7
         ],
         "desc": ""
@@ -257,7 +260,7 @@
 {
     "fields": {
         "isometric": false,
-        "name": "Squats",
+        "name": "Squat",
         "demos": [
             15
         ],
@@ -275,7 +278,7 @@
 {
     "fields": {
         "isometric": false,
-        "name": "Deep Squats",
+        "name": "Deep Squat",
         "demos": [
             16
         ],
@@ -293,7 +296,7 @@
 {
     "fields": {
         "isometric": false,
-        "name": "Bulgarian Split Squats",
+        "name": "Bulgarian Split Squat",
         "demos": [
             17
         ],
@@ -543,5 +546,799 @@
     },
     "model": "exercise.exercise",
     "pk": 30
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Close Grip Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 31
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wide Grip Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 32
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Archer Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 33
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Sternum Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 34
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "One Arm Assisted Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 35
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Half One Arm Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 36
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "One Arm Pull Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 9,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            1
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 37
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Diamond Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 38
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Uneven Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 39
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 40
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline Diamond Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 41
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall One Arm Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 42
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Incline One Arm Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 43
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "One Arm Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 44
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline One Arm Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 9,
+        "equipment_req": [],
+        "categories": [
+            2
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 45
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Beginner Shrimp Squat",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 46
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Assisted One Legged Squat",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 47
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Intermediate Shrimp Squat",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 48
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Pistol Squat",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 49
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Advanced Shrimp Squat",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            3
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 50
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Straight Leg Raise",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 51
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Bent Leg V-raise",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 52
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Straight Leg V-raise",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 53
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Hanging Windshield Wiper",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 54
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "One Arm Hanging Leg Raise",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [
+            2
+        ],
+        "categories": [
+            4
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 55
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Leg Supported Dip",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 56
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Half Dip",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 57
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Dip",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 58
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Leg Forward Dip",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 59
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Russian Dip",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [],
+        "categories": [
+            5
+        ],
+        "desc": "Also called Elbow Dips"
+    },
+    "model": "exercise.exercise",
+    "pk": 60
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Inverted Row One Leg Elevated",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 61
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Tuck Knees Front Lever Row",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 62
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Advanced Tuck Knees Front Lever Row",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 63
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Half Leg Extended Front Lever Row",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 64
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Straddle Front Lever Row",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 65
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Front Lever Row",
+        "demos": [],
+        "image": "",
+        "difficulty": 9,
+        "equipment_req": [],
+        "categories": [
+            6
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 66
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Pike Diamond Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 3,
+        "equipment_req": [],
+        "categories": [
+            2,
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 67
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline Pike Diamond Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 4,
+        "equipment_req": [],
+        "categories": [
+            2,
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 68
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Bent Waist Handstand Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 69
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Bent Waist Diamond Handstand Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 70
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Half Handstand Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 71
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Handstand Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 72
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Handstand Diamond Push Up",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [],
+        "categories": [
+            7
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 73
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Decline Plank",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 74
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Leg Lift Leg",
+        "demos": [],
+        "image": "",
+        "difficulty": 5,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 75
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Arm and Leg Lift Plank",
+        "demos": [],
+        "image": "",
+        "difficulty": 6,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 76
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Arm and Leg Lift Side Plank",
+        "demos": [],
+        "image": "",
+        "difficulty": 7,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 77
+},
+{
+    "fields": {
+        "isometric": false,
+        "name": "Wall Plank",
+        "demos": [],
+        "image": "",
+        "difficulty": 8,
+        "equipment_req": [],
+        "categories": [
+            8
+        ],
+        "desc": ""
+    },
+    "model": "exercise.exercise",
+    "pk": 78
 }
 ]
