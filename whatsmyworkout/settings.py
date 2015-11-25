@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.google',
     #'allauth.socialaccount.providers.twitter',
-    'registration',
+    #'registration',
     'debug_toolbar',
     # Projects apps
     'exercise',

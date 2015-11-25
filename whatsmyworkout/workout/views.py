@@ -38,6 +38,15 @@ class WorkoutJson(View):
 
         series = generate_series(
             n=data['sets'], ex_diff=data['exercise_difficulty'])
+        data['series'] = []
+        for s in series:
+            ex = s.exercise
+            d = {'exercise': {}, 'reps': s.reps, 'seconds': s.seconds}
+            d['exercise']['name'] = ex.name
+            d['exercise']['description'] = ex.desc
+            d['exercise']['difficulty'] = ex.difficulty
+            data['series'].append(d)
+
         print(series)
 
         return JsonResponse(data)
