@@ -4,7 +4,7 @@ Call and extend these settings by passing --settings=<PATH> to runserver, e.g.
 
     python manage.py runserver --settings=whatsmyworkout.settings.base
 """
-import dj_database_url
+from confy import env, database
 import os
 import sys
 from unipath import Path
@@ -17,8 +17,8 @@ PROJECT_DIR = os.path.join(BASE_DIR, 'whatsmyworkout')
 sys.path.insert(0, PROJECT_DIR)
 
 # Application definition
-DEBUG = True if os.environ.get('DEBUG', False) else False
-SECRET_KEY = os.environ['SECRET_KEY']
+DEBUG = env('DEBUG', False)
+SECRET_KEY = env('SECRET_KEY')
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'whatsmyworkout.urls'
 WSGI_APPLICATION = 'whatsmyworkout.wsgi.application'
@@ -80,8 +80,11 @@ TEMPLATES = [
 ]
 
 
-# Database
-DATABASES = {'default': dj_database_url.config()}
+# Database configuration
+DATABASES = {
+    # Defined in the DATABASE_URL env variable.
+    'default': database.config(),
+}
 
 
 # Internationalization

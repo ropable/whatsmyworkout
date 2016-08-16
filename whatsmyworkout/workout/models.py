@@ -1,4 +1,4 @@
-from allauth.account.models import EmailAddress
+#from allauth.account.models import EmailAddress
 from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
@@ -77,12 +77,14 @@ class WorkoutUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+    """
     def account_verified(self):
         if self.user.is_authenticated:
             result = EmailAddress.objects.filter(email=self.user.email)
             if len(result):
                 return result[0].verified
         return False
+    """
 
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Sends an email to this WorkoutUser.
